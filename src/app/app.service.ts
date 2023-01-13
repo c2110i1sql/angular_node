@@ -16,4 +16,8 @@ export class AppService {
   getProductById(id: number) {
     return this.http.get(`${api}/product/${id}`);
   }
+
+  login(data: any) {
+    return this.http.post(`${api}/login`, data);
+  }
 }
