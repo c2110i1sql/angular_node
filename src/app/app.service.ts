@@ -20,4 +20,12 @@ export class AppService {
   login(data: any) {
     return this.http.post(`${api}/login`, data);
   }
+
+  addFavorite(data: any) {
+    return this.http.post(`${api}/add-favorite`, data);
+  }
+
+  removeFavorite(id: number) {
+    return this.http.delete(`${api}/remove-favorite/${id}`);
+  }
 }
