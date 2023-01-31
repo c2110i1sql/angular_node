@@ -22,6 +22,9 @@
       <li *ngIf="user">
         <a href="#">{{user.name}}</a>
       </li>
+      <li *ngIf="user">
+        <a routerLink="/profile">Your profile</a>
+      </li>
 
       <li *ngIf="user">
         <a href="" (click)="onLogout()">Logout</a>
