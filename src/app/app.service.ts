@@ -10,7 +10,11 @@ export class AppService {
 
 
   getProduct() {
-    return this.http.get(`${api}/product`);
+    return this.http.get(`${api}/product`, {
+      headers: {
+        "Authorization": "Bearer "+ this.getUser().token
+      }
+    });
   }
 
   getProductById(id: number) {
