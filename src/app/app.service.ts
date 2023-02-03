@@ -56,4 +56,13 @@ export class AppService {
     return this.http.put(`${api}/update-profile/${this.getUser().id}`, data);
   }
 
+  checkTokenTime() {
+    let token = this.getUser() != null ? this.getUser().token : ''
+    return this.http.get(`${api}/check-token-expired`, {
+      headers: {
+        "Authorization": "Bearer " + token
+      }
+    });
+  }
+
 }
